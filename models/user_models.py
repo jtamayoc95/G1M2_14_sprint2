@@ -10,3 +10,6 @@ class UserOut(BaseModel):
     last_name: str
     email: str
     phone: int
+
+class NewPassword(BaseModel):
+    new_password: str
