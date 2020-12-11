@@ -36,7 +36,7 @@ db_users = {
     "cabe": UserInDB(**{"username": "cabe",
                         "first_name": "Camilo",
                         "last_name": "Bedoya",
-                        "email": "tipitreue@hotmail.com",
+                        "email": "tripitrue@hotmail.com",
                         "phone": 3003562551,
                         "password": "camilo123",
                         }),

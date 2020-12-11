@@ -36,6 +36,5 @@ async def change_password(user_in: UserIn, new_password: NewPassword):
         raise HTTPException(status_code = 404, detail = "El usuario no existe")
     if user_in_db.password != user_in.password:
         return {"Contraseña equivocada": True}
-    user_in_db.password = new_password
-    update_user(user_in_db)
+    user_in_db.password = new_password.new_password
     return {"Cambio de contraseña exitoso": True}
