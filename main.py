@@ -12,6 +12,19 @@ import requests
 # instanciate a fast object using the FastAPI class
 app = FastAPI()
 
+from fastapi.middleware.cors import CORSMiddleware
+
+origins = ["http://localhost.tiangolo.com", 
+            "https://localhost.tiangolo.com",
+            "http://localhost", 
+            "http://localhost:8080",
+            ]
+
+app.add_middleware(
+    CORSMiddleware, allow_origins=origins,
+    allow_credentials=True, allow_methods=["*"], allow_headers=["*"],
+)
+
 @app.post("/user/auth/")
 async def auth_user(user_in: UserIn):
     user_in_db = get_user(user_in.username)
