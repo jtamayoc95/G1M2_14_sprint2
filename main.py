@@ -49,12 +49,6 @@ async def change_password(user_in: UserIn, new_password: NewPassword):
     if user_in_db == None:
         raise HTTPException(status_code = 404, detail = "El usuario no existe")
     if user_in_db.password != user_in.password:
-        return {"Cambio de contraseña exitoso": False}
+        return {"Contraseña equivocada": True}
     user_in_db.password = new_password.new_password
     return {"Cambio de contraseña exitoso": True}
-
-@app.post("/user/logout/")
-async def user_logout():
-    if  {"Autenticado": True}:
-        return {"Autenticado": False}
-    return True
