@@ -52,3 +52,9 @@ async def change_password(user_in: UserIn, new_password: NewPassword):
         return {"Contraseña equivocada": True}
     user_in_db.password = new_password.new_password
     return {"Cambio de contraseña exitoso": True}
+
+@app.post("/logout/")
+async def user_logout():
+    if  {"Autenticado": True}:
+        return {"Autenticado": False}
+    return True
